@@ -21,7 +21,7 @@ function getCommonCharacterCount(s1, s2) {
     charCount2[char] = (charCount2[char] || 0) + 1;
   }
   let resultCount = 0;
-  for (let char of charCount1) {
+  for (let char of Object.keys(charCount1)) {
     if (charCount2[char]) {
       resultCount += Math.min(charCount1[char], charCount2[char]);
     }

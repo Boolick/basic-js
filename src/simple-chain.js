@@ -5,11 +5,13 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 const chainMaker = {
+  chain: [],
+
   getLength() {
     return this.chain.length;
   },
   addLink(value) {
-    this.chain.push(`(${value})`);
+    this.chain.push(`( ${value} )`);
     return this;
   },
   removeLink(position) {
@@ -32,7 +34,7 @@ const chainMaker = {
     const finishedChain = this.chain.join("~~");
     this.chain = [];
     return finishedChain;
-  }
+  },
 };
 
 module.exports = {
